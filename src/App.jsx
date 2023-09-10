@@ -81,7 +81,7 @@ function App() {
         </div>
 
         {/* pagination */}
-        <div className="flex justify-center gap-2 mt-10">
+        <div className="flex justify-center gap-2 mt-10 mb-5">
           {Array(10)
             .fill(0)
             .map((page, idx) => (
