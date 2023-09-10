@@ -7,7 +7,9 @@ function App() {
   const [page, setPage] = useState(0);
   const [videosData, setvideosData] = useState([]);
   const [modal, setmodal] = useState(false);
+  const [loading, setloading] = useState(true);
   const [selectedVideo, setselectedVideo] = useState({});
+
 
 
   const handleClick=(video)=>{
@@ -18,17 +20,29 @@ function App() {
   console.log(selectedVideo)
 
   useEffect(() => {
+    
     fetchVideos();
     console.log(page);
   }, [page]);
 
   const fetchVideos = async () => {
+    setloading(true)
     const response = await fetch(
       `https://internship-service.onrender.com/videos?page=${page}`
     );
     const data = await response.json();
     setvideosData(data.data.posts);
+    setloading(false)
   };
+
+
+  if (loading){
+    return (
+      <>  
+        <h2 className="text-3xl text-center mt-10">Loading...</h2>
+      </>
+    )
+  }
 
   return (
     <div className="flex-col">
