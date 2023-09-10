@@ -1,9 +1,9 @@
 # how to run 
 
-###git clone 
+### `git clone` 
 CLone the repository in local system by command "git clone https://github.com/PreetamGup/Hypergo_Assignment.git"
 
-### npm install
+### `npm install`
 Install the required module by command "npm install ."
 
 ### `npm start`
