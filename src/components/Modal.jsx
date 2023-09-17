@@ -24,7 +24,7 @@ const Modal = ({setmodal, modal, selectedVideo}) => {
 
             <div  className='flex flex-col'>
               <div className='rounded-[20px] overflow-hidden flex justify-center relative'>
-                <ReactPlayer url={`${selectedVideo.submission.mediaUrl}`}  playing light={`${selectedVideo.submission.thumbnail}`} width={"300px"} height={"500px"}/>
+                <ReactPlayer url={`${selectedVideo.submission.mediaUrl}`} controls  playing light={`${selectedVideo.submission.thumbnail}`} width={"300px"} height={"500px"}/>
                 <div className="commentLike flex flex-col gap-2 absolute bottom-10 right-2 bg-black bg-opacity-50 p-2 rounded-2xl">
                     <div>
                       <BiLike className={`text-3xl text-white ${selectedVideo.reaction.voted?"bg-amber-400 rounded-xl text-black":""}`} onClick={handleClick}/>
